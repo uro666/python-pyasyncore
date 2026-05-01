@@ -12,6 +12,7 @@ Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
 BuildArch:	noarch
+BuildRequires:	python
 BuildRequires:	python%{pyver}dist(setuptools)
 
 %description
@@ -34,8 +35,7 @@ chmod -x LICENSE README.md
 %check
 export CI=true
 export PYTHONPATH="%{buildroot}%{python_sitelib}:${PWD}"
-#pytest -rs tests/
-%__python -m unittest
+pytest -rs
 %endif
 
 %files

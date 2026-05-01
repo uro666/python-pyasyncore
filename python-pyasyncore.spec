@@ -13,9 +13,6 @@ Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildSystem:	python
 BuildArch:	noarch
 BuildRequires:	python%{pyver}dist(setuptools)
-%if %{with tests}
-BuildRequires:	python%{pyver}dist(pytest)
-%endif
 
 %description
 This package contains the asyncore module as found in Python versions prior
@@ -37,7 +34,8 @@ chmod -x LICENSE README.md
 %check
 export CI=true
 export PYTHONPATH="%{buildroot}%{python_sitelib}:${PWD}"
-pytest -rs
+#pytest -rs tests/
+%__python -m unittest
 %endif
 
 %files

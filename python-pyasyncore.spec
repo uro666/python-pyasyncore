@@ -14,6 +14,9 @@ BuildSystem:	python
 BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python%{pyver}dist(setuptools)
+%if %{with tests}
+BuildRequires:	python%{pyver}dist(pytest)
+%endif
 
 %description
 This package contains the asyncore module as found in Python versions prior

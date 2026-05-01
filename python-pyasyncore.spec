@@ -15,6 +15,7 @@ BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python%{pyver}dist(setuptools)
 %if %{with tests}
+BuildRequires:	python%{pyver}dist(cython)
 BuildRequires:	python%{pyver}dist(pytest)
 %endif
 

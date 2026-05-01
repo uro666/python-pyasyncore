@@ -12,10 +12,9 @@ Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
 BuildArch:	noarch
-BuildRequires:	python
 BuildRequires:	python%{pyver}dist(setuptools)
 %if %{with tests}
-BuildRequires:	python%{pyver}dist(cython)
+BuildRequires:	python-test
 BuildRequires:	python%{pyver}dist(pytest)
 %endif
 
